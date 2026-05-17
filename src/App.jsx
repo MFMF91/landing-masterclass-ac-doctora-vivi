@@ -10,9 +10,7 @@ import {
   ArrowRight,
   PlayCircle,
   Milk,
-  Sparkles,
-  AlertCircle,
-  Clock3
+  Sparkles
 } from 'lucide-react';
 
 export default function App() {
@@ -30,9 +28,7 @@ export default function App() {
     script.async = true;
     document.body.appendChild(script);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToRegistration = () => {
@@ -66,7 +62,7 @@ export default function App() {
             href={calendarLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#FF8FA3] text-white font-bold px-6 py-2.5 rounded-full hover:bg-[#ff7b92] transition-all shadow-lg shadow-[#FF8FA3]/20 active:scale-95"
+            className="flex items-center gap-2 bg-[#FF8FA3] text-white font-bold px-6 py-2.5 rounded-full hover:bg-[#ff7b92] transition-all shadow-lg shadow-[#FF8FA3]/20 active:scale-95 text-sm md:text-base"
           >
             <Calendar className="w-4 h-4" /> Agregar a mi Calendario
           </a>
@@ -82,8 +78,8 @@ export default function App() {
                 Pasa de la incertidumbre a la <span className="text-[#FF8FA3]">certeza total</span> al alimentar a tu bebé
               </h1>
               <div className="mb-8">
-                <span className="inline-block py-2 px-6 rounded-full bg-[#FFE66D]/40 text-yellow-900 font-normal text-2xl md:text-3xl font-serif">
-                  🌟 Masterclass Gratuita en Vivo
+                <span className="inline-block py-1 px-4 bg-[#FFE66D]/60 text-yellow-900 font-normal text-xl md:text-2xl font-serif">
+                  🌟 Clase Gratuita en Vivo
                 </span>
               </div>
               <p className="font-sans text-lg md:text-xl text-gray-600 mb-10 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -92,7 +88,7 @@ export default function App() {
               
               <div className="mt-8 flex items-center justify-center lg:justify-start gap-8 text-gray-500 font-bold font-sans text-lg">
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-7 h-7 text-[#4ECDC4]" /> Jueves, 24 de Octubre
+                  <Calendar className="w-7 h-7 text-[#4ECDC4]" /> 24 Octubre
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="w-7 h-7 text-[#4ECDC4]" /> 19:00 hrs
@@ -103,7 +99,7 @@ export default function App() {
             <div className="lg:w-2/5 w-full max-w-md pt-8 md:pt-0" ref={registrationRef}>
               <div className="bg-white p-2 rounded-[2.5rem] shadow-2xl border-4 border-[#FF8FA3] relative">
                 <div className="absolute -top-10 -right-4 md:-right-6 bg-[#FF8FA3] text-white font-bold py-3 px-6 rounded-2xl shadow-xl z-20 animate-badge text-center leading-tight border-4 border-white transform rotate-12">
-                  ¡CUPOS<br/><span className="text-sm opacity-90 uppercase tracking-tighter font-serif font-normal">Limitados!</span>
+                  ¡CUPOS<br/><span className="text-sm opacity-90 uppercase tracking-tighter font-serif font-normal text-xs">Limitados!</span>
                 </div>
                 
                 <div className="p-4 bg-white rounded-[2rem] overflow-hidden">
@@ -119,9 +115,6 @@ export default function App() {
                     className="z-10 relative"
                   ></iframe>
                 </div>
-                <p className="text-[11px] text-center text-gray-400 pb-4 flex items-center justify-center gap-1 italic">
-                  <ShieldCheck className="w-3 h-3 text-[#4ECDC4]" /> Registro 100% seguro y privado.
-                </p>
               </div>
             </div>
           </div>
@@ -131,37 +124,37 @@ export default function App() {
       {}
       <section className="py-24 bg-[#FFF0F3] px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 text-gray-900 leading-snug">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 text-gray-900 leading-snug px-4">
             ¿Sientes que hay demasiada información y <span className="text-[#FF8FA3]">no sabes por dónde empezar?</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6 text-left font-sans text-sm md:text-base">
-            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-[#FF8FA3]">
+            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-red-400">
               <p className="text-gray-600 font-medium flex gap-3">
-                <span className="text-[#FF8FA3] font-bold text-xl leading-none italic">“</span>
+                <span className="text-red-500 font-bold text-xl leading-none">❌</span>
                 Te han dicho "Dale de comer tú en la boca para que no se ensucie"
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-[#FF8FA3]">
+            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-red-400">
               <p className="text-gray-600 font-medium flex gap-3">
-                <span className="text-[#FF8FA3] font-bold text-xl leading-none italic">✗</span>
+                <span className="text-red-500 font-bold text-xl leading-none">❌</span>
                 ¿Te da terror el atragantamiento y nadie te ha explicado el "porqué" de las arcadas?
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-[#FF8FA3]">
+            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-red-400">
               <p className="text-gray-600 font-medium flex gap-3">
-                <span className="text-[#FF8FA3] font-bold text-xl leading-none italic">✗</span>
+                <span className="text-red-500 font-bold text-xl leading-none">❌</span>
                 ¿Te preocupa que si no come suficiente, su crecimiento se detenga o tenga anemia?
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-[#FF8FA3]">
+            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-red-400">
               <p className="text-gray-600 font-medium flex gap-3">
-                <span className="text-[#FF8FA3] font-bold text-xl leading-none italic">✗</span>
+                <span className="text-red-500 font-bold text-xl leading-none">❌</span>
                 ¿No tienes claro cómo se integran sus tomas de leche materna o fórmula con la comida?
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-[#FF8FA3] md:col-span-2">
+            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-l-4 border-red-400 md:col-span-2">
               <p className="text-gray-600 font-medium flex gap-3">
-                <span className="text-[#FF8FA3] font-bold text-xl leading-none italic">✗</span>
+                <span className="text-red-500 font-bold text-xl leading-none">❌</span>
                 ¿Sientes que la cocina se convertirá en un caos de comida tirada y platos rechazados constantemente?
               </p>
             </div>
@@ -187,9 +180,7 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-[#FF8FA3]/20 rounded-2xl flex items-center justify-center mb-6">
-                <Baby className="w-6 h-6 text-[#FF8FA3]" />
-              </div>
+              <div className="text-4xl mb-4">👶</div>
               <h3 className="font-serif text-xl font-bold mb-4 text-gray-800">Hitos y Biología</h3>
               <p className="font-sans text-gray-600 text-sm leading-relaxed font-medium">
                 Descubre por qué la edad no lo es todo. Aprenderás sobre la asfixia postural, el control cefálico y el "sellado intestinal".
@@ -197,9 +188,7 @@ export default function App() {
             </div>
 
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-[#4ECDC4]/20 rounded-2xl flex items-center justify-center mb-6">
-                <Utensils className="w-6 h-6 text-[#4ECDC4]" />
-              </div>
+              <div className="text-4xl mb-4">🍲</div>
               <h3 className="font-serif text-xl font-bold mb-4 text-gray-800">Métodos (BLW vs Papillas)</h3>
               <p className="font-sans text-gray-600 text-sm leading-relaxed font-medium">
                 Analizaremos pros y contras del método Tradicional, el BLW y el método BLISS para que tomes una decisión informada.
@@ -207,9 +196,7 @@ export default function App() {
             </div>
 
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-[#FFE66D]/30 rounded-2xl flex items-center justify-center mb-6">
-                <ShieldCheck className="w-6 h-6 text-yellow-600" />
-              </div>
+              <div className="text-4xl mb-4">🪑</div>
               <h3 className="font-serif text-xl font-bold mb-4 text-gray-800">La Regla 90-90-90</h3>
               <p className="font-sans text-gray-600 text-sm leading-relaxed font-medium">
                 Te enseñaré qué buscar en una silla de comer segura y por qué el reposapiés es innegociable para evitar riesgos.
@@ -217,9 +204,7 @@ export default function App() {
             </div>
 
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-[#FF8FA3]/20 rounded-2xl flex items-center justify-center mb-6">
-                <Sparkles className="w-6 h-6 text-[#FF8FA3]" />
-              </div>
+              <div className="text-4xl mb-4">✨</div>
               <h3 className="font-serif text-xl font-bold mb-4 text-gray-800">Materiales Seguros</h3>
               <p className="font-sans text-gray-600 text-sm leading-relaxed font-medium">
                 Aprende a elegir utensilios libres de tóxicos (BPA, PVC) y por qué decirle adiós a los vasitos con boquilla.
@@ -227,9 +212,7 @@ export default function App() {
             </div>
 
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all md:col-span-2 lg:col-span-1">
-              <div className="w-12 h-12 bg-[#4ECDC4]/20 rounded-2xl flex items-center justify-center mb-6">
-                <Milk className="w-6 h-6 text-[#4ECDC4]" />
-              </div>
+              <div className="text-4xl mb-4">🍼</div>
               <h3 className="font-serif text-xl font-bold mb-4 text-gray-800">Sincronía con la Leche</h3>
               <p className="font-sans text-gray-600 text-sm leading-relaxed font-medium">
                 Cómo integrar las tomas de leche materna o fórmula con los sólidos para asegurar que reciba todos los nutrientes sin estrés.
@@ -240,7 +223,7 @@ export default function App() {
       </section>
 
       {}
-      <section className="py-24 bg-[#FEFBFA] px-6">
+      <section className="py-24 bg-[#EAF9F8] px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
@@ -248,9 +231,9 @@ export default function App() {
              </h2>
           </div>
           
-          <div className="bg-white rounded-[3rem] p-8 md:p-14 shadow-xl border border-pink-50 flex flex-col md:flex-row items-start gap-12 lg:gap-16">
-            <div className="w-full md:w-1/2 lg:w-[45%] sticky top-24">
-              <div className="aspect-[4/5] bg-[#FFF0F3] rounded-[2.5rem] overflow-hidden border-4 border-[#FF8FA3] shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="bg-white rounded-[3rem] p-8 md:p-14 shadow-xl border border-pink-50 flex flex-col md:flex-row items-center gap-12 lg:gap-16">
+            <div className="w-full md:w-1/2 lg:w-[45%]">
+              <div className="aspect-[4/5] bg-[#FFF0F3] rounded-[2.5rem] overflow-hidden border-4 border-[#FF8FA3] shadow-2xl transform -rotate-2">
                 <img 
                   src="https://i.ibb.co/N26QsCgp/Foto-Doctora-Vivi-Franco.jpg" 
                   alt="Dra. Vivi Franco" 
@@ -272,7 +255,7 @@ export default function App() {
                 <p>
                   Fue entonces cuando tomé la decisión de estudiar y formarme de la mejor manera para poder hacer lo mejor por mis bebés. Y, al darme cuenta de que muchas otras mamás estaban en la misma situación en la que yo estaba, decidí crear este curso para que puedan tener la tranquilidad de que pueden darles lo mejor a sus bebés, entendiendo el porqué detrás de cada paso.
                 </p>
-                <p className="text-gray-900 font-bold mt-4 leading-tight">
+                <p className="text-gray-900 font-medium mt-4 leading-tight">
                   ¡Con el contenido de este curso y mi acompañamiento en vivo, lograremos darle la alimentación adecuada para el mejor desarrollo de tu bebé! 🥰
                 </p>
               </div>
