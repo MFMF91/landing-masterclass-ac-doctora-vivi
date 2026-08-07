@@ -11,7 +11,6 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const registrationRef = useRef(null);
 
-  // Scroll handler for sticky header shadow transition
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -51,13 +50,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FEFBFA] font-sans text-gray-800">
-      {/* Import custom Google Fonts */}
+      {/* Custom Google Fonts */}
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
         .font-serif { font-family: 'Fredoka', sans-serif; }
         .font-sans { font-family: 'Nunito', sans-serif; }
       `}} />
 
+      {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm py-3' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto px-6 max-w-6xl flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -75,6 +75,7 @@ export default function App() {
         </div>
       </header>
 
+      {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 relative overflow-hidden">
         {/* Decorative background blur blobs */}
         <div className="absolute top-20 right-10 w-64 h-64 bg-[#FFE66D] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob pointer-events-none"></div>
@@ -94,10 +95,11 @@ export default function App() {
                 </span>
               </div>
 
-              <p className="font-sans text-base md:text-lg text-gray-600 mb-8 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="font-sans text-base md:text-lg text-gray-600 mb-6 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 En esta clase gratuita, te enseñaré qué es la alimentación complementaria con sus diferentes métodos. Te mostraré todo lo que necesitarás para poder hacerlo de forma segura y sin preocupaciones.
               </p>
               
+              {/* Event details summary */}
               <div className="mt-6 flex flex-col items-center lg:items-start gap-4">
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-700 font-bold font-sans text-base md:text-lg">
                   <div className="flex items-center gap-2">
@@ -120,17 +122,17 @@ export default function App() {
                     <div>🇦🇷/🇺🇾 19:00 hrs (ARG / URY)</div>
                     <div>🇺🇸 18:00 ET / 17:00 CT / 15:00 PT (USA)</div>
                   </div>
-                  <div className="mt-3 text-xs text-gray-700 border-t border-[#FF8FA3]/20 pt-2.5 font-semibold leading-relaxed">
-                    🌍 Nota para España y el resto de Europa: la clase se transmitirá al día siguiente (Lunes, 24 de Agosto).
+                  <div className="mt-3 text-xs text-gray-700 border-t border-[#FF8FA3]/20 pt-2.5 font-semibold leading-relaxed flex items-center gap-1">
+                    🇪🇸/🇪🇺 Para España y el resto de Europa: la clase se transmitirá el Lunes 24 de Agosto a las 5PM
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Registration Card with Tally Embed */}
+            {/* Registration Card with Tally */}
             <div className="lg:w-2/5 w-full max-w-md relative" ref={registrationRef}>
               <div className="bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border-4 border-[#FF8FA3] relative">
-                <div className="absolute -top-5 -right-3 bg-[#FF8FA3] text-white font-serif font-bold text-sm py-1.5 px-4 rounded-full transform rotate-3 shadow-md animate-pulse">
+                <div className="absolute -top-5 -right-3 bg-[#FF8FA3] text-white font-serif font-bold text-sm py-1.5 px-4 rounded-full transform rotate-3 shadow-[0_0_18px_rgba(255,143,163,0.85)]">
                   ¡Cupos Limitados!
                 </div>
                 
@@ -159,6 +161,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Pain Points */}
       <section className="py-20 bg-[#FFF0F3] px-6">
         <div className="container mx-auto max-w-5xl text-center">
           <h2 className="font-serif text-2xl md:text-4xl font-bold mb-10 text-gray-900 leading-snug">
@@ -205,6 +208,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* What you will learn */}
       <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
@@ -217,7 +221,7 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Tarjeta 1 */}
+            {/* Card 1 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">🛑</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">Cómo Prevenir el Atragantamiento</h3>
@@ -226,7 +230,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Tarjeta 2 */}
+            {/* Card 2 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">🛡️</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">Seguridad Alimentaria en Bebés</h3>
@@ -235,7 +239,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Tarjeta 3 */}
+            {/* Card 3 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">👶</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">Hitos y Biología</h3>
@@ -244,7 +248,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Tarjeta 4 */}
+            {/* Card 4 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">🍲</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">Métodos (BLW vs Papillas)</h3>
@@ -253,7 +257,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Tarjeta 5 */}
+            {/* Card 5 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">🪑</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">La Regla 90-90-90</h3>
@@ -262,7 +266,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Tarjeta 6 */}
+            {/* Card 6 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all">
               <div className="text-4xl mb-4">✨</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">Materiales Seguros</h3>
@@ -271,7 +275,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* Tarjeta 7 */}
+            {/* Card 7 */}
             <div className="bg-[#FEFBFA] p-8 rounded-[2rem] border border-[#FFF0F3] hover:shadow-lg transition-all md:col-span-2 lg:col-span-1">
               <div className="text-4xl mb-4">🍼</div>
               <h3 className="font-serif text-xl font-bold mb-3 text-gray-800">Sincronía con la Leche</h3>
@@ -283,6 +287,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* About Speaker */}
       <section className="py-20 bg-[#EAF9F8] px-6">
         <div className="container mx-auto max-w-5xl">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-10 text-center text-gray-900">
@@ -306,13 +311,13 @@ export default function App() {
                   “Soy médico experta en neurodesarrollo, lactancia y nutrición infantil; y también soy mamá de dos.”
                 </p>
                 <p>
-                  Yo también estuvo donde estás ahora: perdida antes de empezar la alimentación complementaria. Estaba frustrada porque tenía información contradictoria de todas partes: internet, familiares, amigas y hasta colegas.
+                  Yo también estuve donde estás ahora: perdida antes de empezar la alimentación complementaria. Estaba frustrada porque tenía información contradictoria de todas partes: internet, familiares, amigas y hasta colegas.
                 </p>
                 <p>
                   Había mucha teoría sobre cómo alimentar a un bebé, pero nadie me podía explicar el porqué de esas decisiones.
                 </p>
                 <p>
-                  Fue entonces cuando tomé la decisión de estudiar y formarme de la mejor manera para poder hacer lo mejor por mis bebés. Y, al darme cuenta de que muchas otras mamás estaban en la misma situación, decidí crear este espacio para que puedan tener la tranquilidad de que pueden darles lo mejor a sus bebés, entendiendo el porqué detrás de cada paso.
+                  Fue entonces cuando tomé la decisión de estudiar y formarme de la mejor manera para poder hacer lo mejor por mes bebés. Y, al darme cuenta de que muchas otras mamás estaban en la misma situación, decidí crear este espacio para que puedan tener la tranquilidad de que pueden darles lo mejor a sus bebés, entendiendo el porqué detrás de cada paso.
                 </p>
                 <p className="font-bold text-[#FF8FA3] text-base pt-2">
                   ¡Con el contenido de este curso y mi acompañamiento en vivo, lograremos darle la alimentación adecuada para el mejor desarrollo de tu bebé! 🥰
@@ -323,6 +328,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Call to Action Bottom */}
       <section className="py-20 bg-[#FF8FA3] px-6 text-center relative overflow-hidden">
         <div className="container mx-auto max-w-3xl relative z-10">
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
