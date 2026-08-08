@@ -68,7 +68,7 @@ export default function App() {
             href={calendarLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#FFF0F3] text-[#FF8FA3] hover:bg-[#FF8FA3] hover:text-white font-bold px-5 py-2.5 rounded-full transition-all text-sm md:text-base"
+            className="flex items-center gap-2 bg-[#FF8FA3] text-white hover:bg-[#e07b8f] font-extrabold px-5 py-2.5 rounded-full transition-all text-sm md:text-base shadow-sm"
           >
             <Calendar className="w-4 h-4" /> Agregar a mi Calendario
           </a>
@@ -110,8 +110,8 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* International schedules breakdown */}
-                <div className="bg-[#FFF0F3] p-4 rounded-2xl border border-[#FF8FA3]/30 text-xs md:text-sm text-gray-600 font-sans w-full max-w-xl">
+                {/* International schedules breakdown (Desktop only) */}
+                <div className="hidden lg:block bg-[#FFF0F3] p-4 rounded-2xl border border-[#FF8FA3]/30 text-xs md:text-sm text-gray-600 font-sans w-full max-w-xl">
                   <p className="font-bold text-gray-800 mb-2 flex items-center gap-1">
                     🌐 Horarios internacionales:
                   </p>
@@ -156,6 +156,23 @@ export default function App() {
                   <ShieldCheck className="w-4 h-4 text-[#4ECDC4]" /> Tus datos están 100% protegidos.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* International schedules breakdown (Mobile only - placed after registration card) */}
+          <div className="block lg:hidden mt-8 w-full max-w-xl mx-auto bg-[#FFF0F3] p-4 rounded-2xl border border-[#FF8FA3]/30 text-xs md:text-sm text-gray-600 font-sans">
+            <p className="font-bold text-gray-800 mb-2 flex items-center gap-1">
+              🌐 Horarios internacionales:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-medium">
+              <div>🇲🇽/🇬🇹/🇨🇷 16:00 hrs (MEX / GTM / CRI)</div>
+              <div>🇨🇴/🇪🇨/🇵🇪/🇵🇦 17:00 hrs (COL / ECU / PER / PAN)</div>
+              <div>🇻🇪/🇨🇱/🇩🇴 18:00 hrs (VEN / CHL / DOM)</div>
+              <div>🇦🇷/🇺🇾 19:00 hrs (ARG / URY)</div>
+              <div>🇺🇸 18:00 ET / 17:00 CT / 15:00 PT (USA)</div>
+            </div>
+            <div className="mt-3 text-xs text-gray-700 border-t border-[#FF8FA3]/20 pt-2.5 font-semibold leading-relaxed flex items-center gap-1">
+              🇪🇸/🇪🇺 Para España y el resto de Europa: la clase se transmitirá el Lunes 24 de Agosto a las 5PM
             </div>
           </div>
         </div>
